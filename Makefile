@@ -1,8 +1,8 @@
 NAME = push_swap
 
 SRCDIR = .
-LIBFTDIR = libft
-PRINTFDIR = printf
+LIBFTDIR = Libft
+PRINTFDIR = ft_printf
 
 LIBFT = $(LIBFTDIR)/libft.a
 PRINTF = $(PRINTFDIR)/libftprintf.a

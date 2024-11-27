@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rabatist <marvin@42lausanne.ch>            +#+  +:+       +#+        */
+/*   By: rabatist <rabatist@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/01 15:48:43 by rabatist          #+#    #+#             */
-/*   Updated: 2024/10/04 14:24:48 by rabatist         ###   ########.fr       */
+/*   Created: 2024/11/27 15:41:52 by rabatist          #+#    #+#             */
+/*   Updated: 2024/11/27 15:42:08 by rabatist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
 
-int	ft_isascii(int c)
+#include "push_swap.h"
+
+void	swap(char *str, int *array, int size)
 {
-	if (c >= 0 && c <= 127)
-		return (1);
-	return (0);
+	int	tmp;
+
+	if (size > 1)
+	{
+		tmp = array[0];
+		array[0] = array[1];
+		array[1] = tmp;
+		ft_printf("%s\n", str);
+	}
 }

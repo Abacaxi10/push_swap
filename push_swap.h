@@ -5,57 +5,46 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rabatist <rabatist@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/15 17:11:33 by rabatist          #+#    #+#             */
-/*   Updated: 2024/11/25 15:49:39 by rabatist         ###   ########.fr       */
+/*   Created: 2024/11/26 16:21:20 by rabatist          #+#    #+#             */
+/*   Updated: 2024/11/27 19:07:22 by rabatist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "../printf/ft_printf.h"
-# include "../libft/libft.h"
-# include <limits.h>
-# include <stdbool.h>
+# include "Libft/libft.h"
+# include "ft_printf/ft_printf.h"
+# include <stdlib.h>
+# include <unistd.h>
+# include <stdio.h>
 
-typedef struct s_stack_node
+typedef struct s_stacks
 {
-	int					nbr;
-	int					index;
-	int					push_cost;
-	bool				above_median;
-	bool				cheapest;
-	struct s_stack_node	*target_node;
-	struct s_stack_node	*next;
-	struct s_stack_node	*prev;
-}	t_stack_node;
+	int		*a;
+	int		*b;
+	int		a_size;
+	int		b_size;
+	char	*join_args;
+}			t_stacks;
 
-int				error_duplicate(t_stack_node *a, int n);
-int				error_syntax(char *str);
-void			free_stack(t_stack_node **stack);
-void			free_errors(t_stack_node **a);
+void	sort_three_elements(t_stacks *s);
+int		is_array_sorted(t_stacks *s);
+void	sort_four_or_five_elements(t_stacks *s);
+void	radix_sort(t_stacks *s);
 
-void			init_stack_a(t_stack_node **a, char **av);
-bool			stack_sorted(t_stack_node *stack);
-int				stack_len(t_stack_node *stack);
-t_stack_node	*find_last_node(t_stack_node *stack);
-t_stack_node	*find_max(t_stack_node *stack);
+void	free_exit_message(t_stacks *s, char *msg);
 
-void			ra(t_stack_node **a, bool print);
-void			rb(t_stack_node **b, bool print);
-void			rr(t_stack_node **a, t_stack_node **b, bool print);
+void	parse_numbers(t_stacks *s);
+void	init_stacks(int ac, char **av, t_stacks *s);
+int		ft_atol(const char *n, t_stacks *s);
+void	exit_if_sorted_or_duplicate(t_stacks *s, int i);
+void	create_index(t_stacks *s);
 
-void			rra(t_stack_node **a, bool print);
-void			rrb(t_stack_node **b, bool print);
-void			rrr(t_stack_node **a, t_stack_node **b, bool print);
+void	swap(char *str, int *array, int size);
+void	rotate(int *array, int size, char *direction, char *list);
+void	push(char *direction, t_stacks *s);
 
-void	pa(t_stack_node **a, t_stack_node **b, bool print);
-void	pb(t_stack_node **a, t_stack_node **b, bool print);
 
-void			sa(t_stack_node **a, bool print);
-void			sb(t_stack_node **b, bool print);
-void			ss(t_stack_node **a, t_stack_node **b, bool print);
 
-void			sort_three(t_stack_node **a);
-void	sort_stacks(t_stack_node **a, t_stack_node **b);
 #endif
