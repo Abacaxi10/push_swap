@@ -6,7 +6,7 @@
 /*   By: rabatist <rabatist@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 19:55:50 by rabatist          #+#    #+#             */
-/*   Updated: 2024/11/27 16:41:34 by rabatist         ###   ########.fr       */
+/*   Updated: 2024/11/28 14:22:46 by rabatist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static void	rotate_up(int *array, int size)
 	array[size - 1] = tmp;
 }
 
-static void rotate_down(int *array, int size)
+static void	rotate_down(int *array, int size)
 {
 	int	tmp;
 	int	i;

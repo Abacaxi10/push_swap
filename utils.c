@@ -6,7 +6,7 @@
 /*   By: rabatist <rabatist@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 16:50:45 by rabatist          #+#    #+#             */
-/*   Updated: 2024/11/27 16:01:14 by rabatist         ###   ########.fr       */
+/*   Updated: 2024/11/28 15:54:32 by rabatist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,20 +82,16 @@ void	exit_if_sorted_or_duplicate(t_stacks *s, int i)
 {
 	int	j;
 
-	j = 0;
-	if (i == 0)
+	while (i < s->a_size)
 	{
-		while (i < s->a_size)
+		j = i + 1;
+		while (j < s->a_size)
 		{
-			j = i + 1;
-			while (j < s->a_size)
-			{
-				if (s->a[i] == s->a[j])
-					free_exit_message(s, "Error\n");
-				j++;
-			}
-			i++;
+			if (s->a[i] == s->a[j])
+				free_exit_message(s, "Error\n");
+			j++;
 		}
+		i++;
 	}
 	if (is_array_sorted(s))
 		free_exit_message(s, NULL);

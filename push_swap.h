@@ -6,7 +6,7 @@
 /*   By: rabatist <rabatist@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 16:21:20 by rabatist          #+#    #+#             */
-/*   Updated: 2024/11/27 19:07:22 by rabatist         ###   ########.fr       */
+/*   Updated: 2024/11/28 15:29:57 by rabatist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void	sort_three_elements(t_stacks *s);
 int		is_array_sorted(t_stacks *s);
 void	sort_four_or_five_elements(t_stacks *s);
 void	radix_sort(t_stacks *s);
+void	start_sorting(t_stacks *s);
 
 void	free_exit_message(t_stacks *s, char *msg);
 
@@ -44,7 +45,5 @@ void	create_index(t_stacks *s);
 void	swap(char *str, int *array, int size);
 void	rotate(int *array, int size, char *direction, char *list);
 void	push(char *direction, t_stacks *s);
-
-
 
 #endif

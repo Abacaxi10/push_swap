@@ -6,7 +6,7 @@
 /*   By: rabatist <rabatist@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 15:08:20 by rabatist          #+#    #+#             */
-/*   Updated: 2024/11/27 19:07:07 by rabatist         ###   ########.fr       */
+/*   Updated: 2024/11/28 16:13:27 by rabatist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	is_array_sorted(t_stacks *s)
 	int	i;
 
 	i = 0;
-	while(i < s->a_size - 1)
+	while (i < s->a_size - 1)
 	{
 		if (s->a[i] > s->a[i + 1])
 			return (0);
